@@ -1,0 +1,52 @@
+body {
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.flex {
+    display: flex;
+  }
+  
+  .container {
+    display: flex;
+    list-style: none;
+  }
+  
+  .recentScoresBtn {
+    margin: 10px;
+  }
+  
+  .recentScoresBtn h2 {
+    margin: 10px;
+  }
+  
+  .recentScoresBtn button {
+    margin: 10px;
+  }
+  
+  .addYourScore {
+    flex-direction: column;
+  }
+  
+  .scoreFormUl {
+    list-style: none;
+  }
+  
+  .scoreFormUl li {
+    margin: 10px;
+  }
+  
+  .scoreFormUl button {
+    margin-left: 113px;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .scoreList {
+    border: 1px solid;
+    width: 100%;
+    list-style: none;
+  }
+  
