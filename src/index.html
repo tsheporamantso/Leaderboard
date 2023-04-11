@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leader Board Title Page</title>
+  </head>
+  <body>
+    <h1>Leaderboard</h1>
+    <div class="container flex">
+      <div class="recentScores">
+        <div class="recentScoresBtn flex">
+          <h2>Recent scores</h2>
+          <button class="refresh" type="reset">Refresh</button>
+        </div>
+        <div class="scoreListArea">
+          <ul class="scoreList" id="scoreList"></ul>
+        </div>
+      </div>
+      <div class="addYourScore flex">
+        <form class="scoreForm" id="scoreForm">
+          <ul class="scoreFormUl">
+            <li>
+              <h2>Add your score</h2>
+            </li>
+            <li>
+              <input
+                class="scoreName"
+                type="text"
+                name="title"
+                placeholder="Your name"
+                required
+              />
+            </li>
+            <li>
+              <input
+                class="score"
+                type="text"
+                name="score"
+                placeholder="Your score"
+                required
+              />
+            </li>
+            <li>
+              <button class="submitBtn" type="submit">Submit</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
