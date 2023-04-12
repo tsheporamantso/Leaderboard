@@ -9,7 +9,7 @@ const formFunction = () => {
     e.preventDefault();
     const scoreName = document.querySelector('.scoreName');
     const score = document.querySelector('.score');
-    if (scoreName.value !== '' && score.value !== '') {
+    if (scoreName.value.length >= 1 && score.value !== '') {
       scoreBoard.addNewScore(scoreName.value, score.value);
     }
     scoreName.value = '';
