@@ -34,8 +34,7 @@ class ScoreBoard {
     }
     data.forEach((element) => {
       const content = `
-        <li class="scoreItem">${element.name}</li>
-        <li class="scoreItem">${element.score}</li>
+      <li class="scoreItem">${element.name} <span>: <span>${element.score}</li>
       `;
       scoreList.innerHTML += content;
     });

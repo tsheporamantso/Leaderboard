@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
 body {
   overflow: hidden;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+li {
+  list-style: none;
 }
 
 .flex {
@@ -10,26 +16,19 @@ body {
 .container {
   display: flex;
   list-style: none;
+  width: 100%;
+  margin-left: 5%;
 }
 
-.recentScoresBtn {
-  margin: 10px;
-}
-
-.recentScoresBtn h2 {
-  margin: 10px;
-}
-
-.recentScoresBtn button {
+.recentScoresBtn,
+h2,
+button {
   margin: 10px;
 }
 
 .addYourScore {
   flex-direction: column;
-}
-
-.scoreFormUl {
-  list-style: none;
+  margin-left: 30px;
 }
 
 .scoreFormUl li {
@@ -47,12 +46,42 @@ body {
 .scoreList {
   display: flex;
   flex-direction: column;
-  border: 1px solid;
+  list-style: none;
+  border: 3px solid;
   width: 100%;
   height: 100%;
-  list-style: none;
+  margin: 0;
+}
+
+.scoreItem {
+  margin-left: -35px;
 }
 
 .scoreItem:nth-child(even) {
   background-color: #cdc9c9;
+}
+
+.button {
+  border: 1px solid black;
+  background-color: #c37b0775;
+  border-radius: 12px;
+  border-width: 0;
+  box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+  color: #f1eeee;
+  cursor: pointer;
+  display: inline-block;
+  font-family: cursive;
+  font-size: 1em;
+  height: 30px;
+  padding: 0 15px;
+  transition: all 200ms;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: rgb(63, 1, 63);
+}
+
+input {
+  border: 3px solid black;
 }
