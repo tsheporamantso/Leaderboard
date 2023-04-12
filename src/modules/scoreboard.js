@@ -1,23 +1,43 @@
 class ScoreBoard {
   constructor() {
-    this.scores = [];
+    this.url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/36Qpl9JjCfoxnxZtJDrn/scores/';
   }
 
-  addNewScore() {
-    const name = document.querySelector('.scoreName');
-    const score = document.querySelector('.score');
-    this.scores.push(`${name.value} : ${score.value}`);
+  apiFetch = async () => {
+    const request = new Request(this.url);
+    const result = await fetch(request);
+    const fResult = await result.json();
+    const allScores = fResult.result.map(({ user: name, score }) => ({
+      name,
+      score,
+    }));
+    return allScores;
   }
 
-  displayScore() {
+  addNewScore= async (name, score) => {
+    await fetch(this.url, {
+      method: 'POST',
+      body: JSON.stringify({ user: name, score }),
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    });
+  }
+
+  displayScore = async () => {
     const scoreList = document.getElementById('scoreList');
-    if (this.scores.length > 0) {
+    scoreList.innerHTML = '';
+    const data = await this.apiFetch();
+
+    if (this.url > 0) {
       scoreList.classList.add('show');
     }
-    const li = document.createElement('li');
-    this.scores.forEach((element) => {
-      li.textContent = element;
-      scoreList.appendChild(li);
+    data.forEach((element) => {
+      const content = `
+        <li class="scoreItem">${element.name}</li>
+        <li class="scoreItem">${element.score}</li>
+      `;
+      scoreList.innerHTML += content;
     });
   }
 }
